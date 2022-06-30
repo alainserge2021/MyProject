@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8">
+	<title>calculator</title>
+	<style>
+		input[type=button]
+		{
+			color: black; 
+			font-size: 20pt; 
+			font-weight: bold;
+			width: 64px;
+			height: 45px;
+			padding: 10px;
+   border:0.6px solid blue;
+   margin-bottom:5px;
+   box-shadow: 4px black;
+
+		}
+#part2
+{
+margin-top:0%;
+font-size:10px;
+}
+	</style>
+
+</head>
+<body bgcolor="high"><center>
+	<form >
+		
+
+		<div class="calculator" style="width: 300px; height: auto; background-color: gray; margin-top: 1%; box-shadow: 0px 7px 6px 7px  blue; border-radius:10px;">
+
+<h2 style="padding-top:12px; color:aqua;">CALCULATOR</h2>
+<hr>
+
+
+			<input type="text" maxlength="10" autocomplete="off" id="window" value="" style="width: 270px; height: 50px; font-size: 24pt; font-weight: bold; margin-top: 14px; border:2px inset blue;" >
+
+			<br>
+
+<div>
+<input type="text" maxlength="10" autocomplete="off" id="time" value="" style="width: 120px; height: 36px; font-size: 21pt; font-weight: bold; margin-left:48%;border:2px inset blue; border-radius:10px; margin-top:2%;background-color:lightgreen; text-align:center;" readonly >
+</div>
+<div>
+			<span style="float:left; padding:3px 4px 0px 3px; margin-top:-14%; color:white; font-weight:bold; background-color:gray; text-align:center; margin-left:6%; border-radius:10px; border-left:6px solid lightgreen;border-right:6px solid lightgreen;border-top:1px solid lightgreen;border-bottom:1px solid lightgreen; font-size:12.8px; ">Triple &nbsp; once &nbsp;only<br>Code &nbsp; twice </span>
+</div>
+		
+
+
+			<div class="buttons" style="padding: 8px;" id="part1">
+
+	<input type="button" id="squareroot" onclick="sqrt()" value="√">
+
+					<input type="button" id="square" onclick="power()" value="x²">
+
+			<input type="button" id="one by one" onclick="oneclean()" value="C">
+
+		<input type="button" id="clean" onclick="document.getElementById('window').value='';" value="CE">
+
+
+			<br>
+			
+<input type="button" id="seven" onclick="document.getElementById('window').value+=7;" value="7">
+			
+	<input type="button" id="eight" onclick="document.getElementById('window').value+=8;" value="8">
+
+	<input type="button" id="nine" onclick="document.getElementById('window').value+='9';" value="9">
+
+
+	<input type="button" id="devide" onclick="document.getElementById('window').value+='/';" value="➗">
+
+            
+
+
+			<br>
+
+
+<input type="button" id="four" onclick="document.getElementById('window').value+=4;" value="4">
+			
+	<input type="button" id="five" onclick="document.getElementById('window').value+=5;" value="5">
+
+	<input type="button" id="six" onclick="document.getElementById('window').value+=6;" value="6">
+
+
+	<input type="button" id="devide" onclick="document.getElementById('window').value+='-';" value="➖">
+
+			
+			<br>
+			
+
+<input type="button" id="one" onclick="document.getElementById('window').value+=1;" value="1">
+			
+	<input type="button" id="two" onclick="document.getElementById('window').value+=2;" value="2">
+
+	<input type="button" id="three" onclick="document.getElementById('window').value+=3;" value="3">
+
+
+	<input type="button" id="multi" onclick="document.getElementById('window').value+='x';" value="X">
+
+<br>
+
+<input type="button" id="zeru" onclick="document.getElementById('window').value+=0;" value="0">
+			
+	<input type="button" id="point" onclick="document.getElementById('part2').style.display='block';
+document.getElementById('part1').style.display='none';" value="⏪">
+
+
+
+	<input type="button" id="plus" onclick="document.getElementById('window').value+='+';" value="➕">
+
+<input type="button" id="equal" onclick="myequal()" value="✔=">
+
+
+
+
+		</div>
+
+
+
+
+
+
+
+	<div class="buttons" style="padding: 8px; display:none; " id="part2">
+
+	<input type="button" id="cube" onclick="gatatu()" value="x³">
+
+	<input type="button" id="nine" onclick="fith()" value="x5">
+
+
+				
+			<input type="button" id="one by one" onclick="oneclean()" value="C">
+
+		<input type="button" id="clean" onclick="document.getElementById('window').value='';" value="CE">
+
+
+			<br>
+				<input type="button" id="fourth" onclick="fuck()" value="x⁴">
+
+
+	<input type="button" id="square" onclick="exp()" value="exp">
+
+
+
+	<input type="button" id="devide" onclick="floor()" value="flr">
+
+            
+<input type="button" id="seven" onclick="abs()" value="abs">
+			
+
+			<br>
+
+
+<input type="button" id="" onclick="mod()" value="%">
+			
+	<input type="button" id="five" onclick="sin()" value="sin">
+
+	<input type="button" id="six" onclick="cos()" value="cos">
+
+
+	<input type="button" id="devide" onclick="sin()" value="sin">
+
+			
+			<br>
+			
+
+<input type="button" id="one" onclick="in()" value="in">
+			
+	<input type="button" id="two" onclick="" value="rad">
+
+	<input type="button" id="ceil" onclick="math1()" value="ceil">
+
+
+	<input type="button" id="multi" onclick="" value="℅">
+
+<br>
+
+<input type="button" id="zeru" onclick="document.getElementById('window').value+='.';" value="•">
+			
+	<input type="button" id="point" onclick="document.getElementById('part2').style.display='none';
+document.getElementById('part1').style.display='block';" value="⏩">
+
+
+
+	<input type="button" id="plus" onclick="document.getElementById('window').value+='+';" value="➕">
+
+<input type="button" id="equal" onclick="myequal()" value="✔=">
+
+
+
+
+		</div>
+
+
+		</div>
+
+	</form>
+
+
+</center>
+<script>
+function oneclean()
+{
+
+var txt=document.getElementById('window').value;
+var tx=txt.length;
+tx--;
+
+var result = txt.slice(0, tx);
+
+  txtfin=document.getElementById('window').value=result;
+}
+
+function myequal()
+{
+
+
+ var str=document.getElementById('window').value;
+
+
+ if(str.indexOf("+")!=-1)
+{
+
+var q=str.indexOf("+");
+      var w=q--;
+      var v=q+2;
+      var l=str.length;
+ 
+      var result1 = str.slice(0, w);
+      var result2 = str.slice(v, l);
+      var re=parseFloat(result1);
+      var ree=parseFloat(result2);
+
+            var answer=document.getElementById('window').value=re+ree;
+}
+
+if(str.indexOf("-")!=-1)
+{
+
+var q=str.indexOf("-");
+      var w=q--;
+      var v=q+2;
+      var l=str.length;
+ 
+      var result1 = str.slice(0, w);
+      var result2 = str.slice(v, l);
+      var re=parseFloat(result1);
+      var ree=parseFloat(result2);
+
+            var answer=document.getElementById('window').value=re-ree;
+}
+
+if(str.indexOf("/")!=-1)
+{
+
+
+var q=str.indexOf("/");
+      var w=q--;
+      var v=q+2;
+      var l=str.length;
+ 
+      var result1 = str.slice(0, w);
+      var result2 = str.slice(v, l);
+      var re=parseFloat(result1);
+      var ree=parseFloat(result2);
+
+            var answer=document.getElementById('window').value=re/ree;
+}
+if(str.indexOf("x")!=-1)
+{
+
+
+var q=str.indexOf("x");
+      var w=q--;
+      var v=q+2;
+      var l=str.length;
+ 
+      var result1 = str.slice(0, w);
+      var result2 = str.slice(v, l);
+      var re=parseFloat(result1);
+      var ree=parseFloat(result2);
+
+            var answer=document.getElementById('window').value=re*ree;
+}
+
+
+}
+var str=document.getElementById('window').value;
+
+function sqrt()
+{
+var str=document.getElementById('window').value;
+
+var re=parseFloat(str);
+
+            var answer=document.getElementById('window').value=Math.sqrt(re);
+}
+function power()
+{
+var str=document.getElementById('window').value;
+
+
+var re=parseFloat(str);
+
+            var answer=document.getElementById('window').value=Math.pow(re,2);
+}
+
+
+function fuck()
+{
+var str=document.getElementById('window').value;
+
+
+var re=parseFloat(str);
+
+            var answer=document.getElementById('window').value=Math.pow(re,4);
+}
+
+function fith()
+{
+var str=document.getElementById('window').value;
+
+
+var re=parseFloat(str);
+
+            var answer=document.getElementById('window').value=Math.pow(re,5);
+}
+
+
+function gatatu()
+{
+var str=document.getElementById('window').value;
+
+
+var re=parseFloat(str);
+
+            var answer=document.getElementById('window').value=Math.pow(re,3);
+}
+
+function math1()
+{
+var str=document.getElementById('window').value;
+
+
+var re=parseFloat(str);
+
+            var answer=document.getElementById('window').value=Math.ceil(re);
+}
+
+function floor()
+{
+var str=document.getElementById('window').value;
+
+
+var re=parseFloat(str);
+
+            var answer=document.getElementById('window').value=Math.floor(re);
+}
+
+
+
+</script>
+
+
+
+
+
+<script>
+
+function doDate()
+{
+    var str = "";
+
+    
+
+    var now = new Date();
+
+    str= now.getHours() +":" + now.getMinutes() + ":" + now.getSeconds();
+    document.getElementById("time").value = str;
+}
+
+setInterval(doDate, 1000);
+</script>
+
+
+
+
+</body>
+</html>
